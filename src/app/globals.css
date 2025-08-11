@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgb(240, 240, 240); */
+
+  background: #0f0f1a;
+}
+img {
+  max-width: 100%;
+}
+[lang="fa-IR"] {
+  direction: rtl;
+}
+
+.f-f-vazir-medium {
+  font-family: "Vazir-Medium";
+}
+.f-f-vazir-light {
+  font-family: "Vazir-Light";
+}
+.f-f-vazir-bold {
+  font-family: "Vazir-Bold";
+}
+.f-f-vazir-regular {
+  font-family: "Vazir-Regular";
+}
+.f-spe {
+  font-family: "Press Start 2P";
+}
+.font-game {
+  font-family: "Press Start 2P";
+}
+.font-orb {
+  font-family: "Orbitron";
+}
+.bubble-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  opacity: 0.7;
+  animation: rise 5s linear infinite;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  left: 40%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+  left: 60%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+  left: 80%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 4s;
+}
+.glitch-effect {
+  animation: bugy 0.5s infinite;
+}
+.buny-jump {
+  animation: bonyJump 1.5s infinite forwards alternate;
+}
+
+.bunnyUpDow1 {
+  animation: upDown 3s ease-in-out infinite alternate;
+  animation-delay: 0s;
+}
+.bunnyUpDow2 {
+  animation: upDown 3s ease-in-out infinite alternate;
+  animation-delay: 0.5s;
+}
+.bunnyUpDow3 {
+  animation: upDown 3s ease-in-out infinite alternate;
+  animation-delay: 1s;
+}
+.bunnyUpDow4 {
+  animation: upDown 3s ease-in-out infinite alternate;
+  animation-delay: 1.5s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1) rotate(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bugy {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes bonyJump {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #4f46e5 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4f46e5;
+  border-radius: 10px;
+  border: 3px solid #fffafa;
+}
+
+.element {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 119, 0.075) 1px,
+      transparent 0.5px
+    ),
+    linear-gradient(to bottom, rgba(255, 0, 119, 0.075) 1px, transparent 0.5px);
+  background-size: 20px 20px;
+  background-origin: content-box;
+}
+
+.soonaspossible:hover::after {
+  content: "به زودی";
+  color: black;
+  position: absolute;
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  top: -50px;
+  right: 7px;
+  pointer-events: none;
+}
+
+.soonaspossible:hover::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  right: 62px;
+  margin: 0 auto;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+}
