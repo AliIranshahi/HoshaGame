@@ -224,3 +224,43 @@ img {
   border-right: 8px solid transparent;
   border-top: 8px solid white;
 }
+@media (min-width: 1) {
+  .out-match {
+    gap: 15px;
+  }
+  .match-card {
+    width: 90%;
+  }
+}
+@media (min-width: 640) {
+  .out-match {
+    gap: 15px;
+  }
+  .match-card {
+    width: 300px;
+  }
+}
+@media (min-width: 768) {
+  .out-match {
+    gap: 20px;
+  }
+  .match-card {
+    width: 330px;
+  }
+}
+@media (min-width: 1200) {
+  .out-match {
+    gap: 35px;
+  }
+  .match-card {
+    width: 340px;
+  }
+}
+@media (min-width: 1540) {
+  .out-match {
+    gap: 40px;
+  }
+  .match-card {
+    width: 480px;
+  }
+}

@@ -89,7 +89,7 @@ function Faq() {
                 </div> */}
 
                 <div className='w-full h-[100vh] flex flex-col justify-center items-center text-center '>
-                    <h1 className={` mx-auto  flex flex-col  f-spe text-7xl mb-20 text-transparent bg-gradient-to-r bg-clip-text  from-purple-400 to-cyan-400  ${!mouseAnimation ? "glitch-effect" : ""}`} onMouseEnter={() => setMouseAnimation(true)} onMouseLeave={() => setMouseAnimation(false)}>
+                    <h1 className={` mx-auto  flex flex-col  f-spe text-[clamp(1.8rem,6vw,4rem)] sm:text-6xl md:text-7xl mb-20 text-transparent bg-gradient-to-r bg-clip-text  from-purple-400 to-cyan-400  ${!mouseAnimation ? "glitch-effect" : ""}`} onMouseEnter={() => setMouseAnimation(true)} onMouseLeave={() => setMouseAnimation(false)}>
                         <span >
                             HOSHA QUIZ
                         </span>
@@ -98,17 +98,17 @@ function Faq() {
                         </span>
                     </h1>
 
-                    <div className='grid grid-cols-12 w-[55%] mx-auto gap-5 '>
-                        <div className='object-center col-span-3 border-1 border-cyan-300 bunnyUpDow1' >
+                    <div className='grid grid-cols-12 w-[90%] sm:w-[65%] md:w-[60%] mx-auto gap-5 '>
+                        <div className='object-center col-span-6 md:col-span-3 border-1 border-cyan-300 bunnyUpDow1' >
                             <img src="assest/game.jpg" alt="saf" />
                         </div>
-                        <div className='object-center col-span-3 border-1 border-purple-500 bunnyUpDow2'>
+                        <div className='object-center col-span-6 md:col-span-3 border-1 border-purple-500 bunnyUpDow2'>
                             <img src="assest/11.jpg" alt="saf" />
                         </div>
-                        <div className='object-center col-span-3 border-1 border-cyan-300 bunnyUpDow3'>
+                        <div className='object-center col-span-6 md:col-span-3 border-1 border-cyan-300 bunnyUpDow3'>
                             <img src="assest/22.jpg" alt="saf" />
                         </div>
-                        <div className='object-center col-span-3 border-1 border-purple-500 bunnyUpDow4'>
+                        <div className='object-center col-span-6 md:col-span-3 border-1 border-purple-500 bunnyUpDow4'>
                             <img src="assest/222.png" alt="saf" />
                         </div>
                     </div>
@@ -124,7 +124,7 @@ function Faq() {
 
                     </>
 
-                    <p className='flex flex-col text-center text-gray-400 f-spe mt-10'>
+                    <p className='flex flex-col text-center text-gray-400 f-spe text-[clamp(15px,3vw,4rem)] sm:text-[16px] mt-10'>
                         <span onClick={handleScrol} className='cursor-pointer'>
                             Scroll down for more
                         </span>

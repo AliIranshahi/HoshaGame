@@ -90,7 +90,7 @@ function LoginSection() {
             {
                 statusPage == "login" ? <form className='mx-auto' onSubmit={handleSubmit(onSubmit)}>
                     <div className={`flex flex-col ${errors.username?.message ? "mb-4" : "mb-7"}`}>
-                        <label htmlFor="username " className='text-white f-f-vazir-medium mb-2'>نام کاربری</label>
+                        <label htmlFor="username " className='text-white f-f-vazir-medium mb-2 '>نام کاربری</label>
                         <input type="text" id='username' className='bg-white rounded-sm w-55 h-9 text-left px-2 font-medium' autoComplete='username'   {...register("username", {
                             validate: (value) => {
                                 const object = value.trim();

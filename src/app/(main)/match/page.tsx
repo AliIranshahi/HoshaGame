@@ -13,6 +13,7 @@ import { authSlice, fetchScoreStatus } from '@/redux/authSlice';
 import axios from 'axios';
 import { useAppDispatch } from '@/redux/useReduxApp';
 import { useRouter } from 'next/navigation';
+import Container from '@/components/container/Container';
 
 interface IData {
   id: number,
@@ -169,24 +170,24 @@ function Match() {
         matchStarted && currentQuiz ?
           <>
             {
-              currentQuiz && currentQuiz.id < 13 ? <div className='w-[950px] h-[600px] bg-[#0c0c14] mx-auto mt-15 border-1 border-[#6c5ce7] rounded-lg  shadow-[1px_0px_7px_1px_#6c5ce7] p-6' key={currentQuiz.id}>
+              currentQuiz && currentQuiz.id < 13 ? <div className=' w-[95%] sm:w-[95%] md:w-[90%] lg:w-[950px] h-[600px] bg-[#0c0c14] mx-auto mt-15 border-1 border-[#6c5ce7] rounded-lg  shadow-[1px_0px_7px_1px_#6c5ce7] p-6' key={currentQuiz.id}>
                 <div className='flex justify-between'>
                   <div className='flex gap-2'>
-                    <div className='flex flex-col'>
-                      <h3 className='f-spe text-gray-300  font-bold'>
+                    <div className='flex flex-col items-center sm:items-start'>
+                      <h3 className='f-spe text-gray-300  font-bold text-[13px] sm:text-[16px]'>
                         Score
                       </h3>
                       <p className='font-bold text-white font-mono'>
                         {currentQuiz.score}
                       </p>
                     </div>
-                    <div className='w-12 h-12 bg-gradient-to-r from-amber-500 to-pink-500 rounded-full font-game justify-center text-white mx-auto flex items-center'>
+                    <div className=' w-9 h-9 sm:w-12 sm:h-12 bg-gradient-to-r from-amber-500 to-pink-500 rounded-full font-game justify-center text-white mx-auto flex items-center'>
                       0
                     </div>
                   </div>
-                  <div className='flex gap-2'>
-                    <div className='flex flex-col'>
-                      <h3 className='f-spe text-gray-300  font-bold'>
+                  <div className='flex gap-2 '>
+                    <div className='flex flex-col items-center sm:items-start'>
+                      <h3 className='f-spe text-gray-300  font-bold text-[13px] sm:text-[16px]'>
                         QUESTION
                       </h3>
                       <p className='font-bold text-white font-mono'>
@@ -195,7 +196,7 @@ function Match() {
                         }
                       </p>
                     </div>
-                    <div className='w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-game justify-center text-white mx-auto flex items-center'>
+                    <div className='w-9 h-9 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-game justify-center text-white mx-auto flex items-center'>
                       {
                         currentQuiz.id
                       }
@@ -208,11 +209,11 @@ function Match() {
 
                 <div className='border-1 border-[#00cec9] mt-10 h-34 rounded-lg p-4 bg-gradient-to-r from-[#1e1e2e] to-[#2d2d42] relative overflow-hidden'>
 
-                  <p className='text-white font-bold text-[25px]'>
+                  <p className='text-white font-bold sm:text-[20px] f-f-vazir-regular md:text-[22px] lg:text-[25px]'>
                     {currentQuiz.question}
                   </p>
 
-                  <div className='flex gap-7 text-cyan-400 justify-end mt-5'>
+                  <div className='flex gap-7 text-cyan-400 justify-end mt-5 absolute bottom-6 left-5'>
                     <div className='flex items-center'>
                       <span className='text-[19px] font-medium'>
                         12s
@@ -239,7 +240,7 @@ function Match() {
                 </div>
 
                 {/*  Quees  */}
-                <div className='grid grid-cols-12 mx-auto text-center gap-5 mt-10'>
+                <div className='grid grid-cols-12 mx-auto text-center gap-5 mt-10 f-f-vazir-regular'>
                   {
                     currentQuiz.options.map((option, index) => {
                       let bgColor = "bg-[#1e1e2eb3]";
@@ -259,7 +260,7 @@ function Match() {
 
                       return ((
                         <div className={`col-span-6 border-1 border-[#3d3d5c] ${bgColor}`} key={index}>
-                          <div className={`  text-white  h-14 rounded-lg mx-auto flex items-center justify-center cursor-pointer f-f-vazir-regular font-normal text-[20px]`} onClick={() => !showOption && handleCheck({ index: index, score: currentQuiz.score, postion: option.correct })}>
+                          <div className={`  text-white  h-14 rounded-lg mx-auto flex items-center justify-center cursor-pointer f-f-vazir-regular font-normal text-[clamp(12px,4vw,1rem)]  sm:text-[20px]`} onClick={() => !showOption && handleCheck({ index: index, score: currentQuiz.score, postion: option.correct })}>
                             {option.text}
                           </div>
                         </div>
@@ -271,11 +272,11 @@ function Match() {
 
                 {/* Button */}
 
-                <div className='flex justify-between items-center mt-10 text-white text-[20px] font-orb font-bold'>
-                  <button className={`bg-gradient-to-t ${!showOption ? "from-purple-900 to-cyan-900" : "from-purple-600 to-cyan-600  hover:from-purple-700 hover:to-cyan-700 "}  rounded-lg w-64 h-12 cursor-pointer transition duration-300`} onClick={nextQuestion} disabled={!showOption}>
+                <div className='flex  justify-between items-center mt-10 text-white  text-[clamp(12px,3vw,1rem)] gap-3 sm:gap-0 sm:text-[20px] font-orb font-bold'>
+                  <button className={` w-[50%] h-12 sm:w-64 sm:h-12 bg-gradient-to-t ${!showOption ? "from-purple-900 to-cyan-900" : "from-purple-600 to-cyan-600  hover:from-purple-700 hover:to-cyan-700 "}  rounded-lg  cursor-pointer transition duration-300`} onClick={nextQuestion} disabled={!showOption}>
                     NEXT QUESTION
                   </button>
-                  <button className='flex gap-2 items-center justify-center bg-amber-500 w-64 h-12 rounded-lg cursor-pointer hover:bg-amber-700  transition duration-300' dir='ltr'>
+                  <button className='flex gap-1 sm:gap-2 items-center justify-center bg-amber-500 w-[50%] h-12 sm:w-64 sm:h-12 rounded-lg cursor-pointer hover:bg-amber-700  transition duration-300' dir='ltr'>
                     <span>
                       <TipsAndUpdatesIcon />
                     </span>
@@ -290,12 +291,12 @@ function Match() {
                 {/* Button */}
 
 
-              </div> : <div className='w-[950px] h-[600px] bg-[#0c0c14] mx-auto mt-15 border-1 border-[#6c5ce7] rounded-lg  shadow-[1px_0px_7px_1px_#6c5ce7] p-6'>
+              </div> : <div className=' w-[95%] sm:w-[90%] md:w-[70%] lg:w-[52%] h-[600px] bg-[#0c0c14] mx-auto mt-15 border-1 border-[#6c5ce7] rounded-lg  shadow-[1px_0px_7px_1px_#6c5ce7] p-4 sm:p-6'>
                 <h4 className='text-[25px] font-bold text-white f-f-vazir-bold text-center'>
                   پایان فصل <span className='bg-gradient-to-r bg-clip-text from-purple-500 to-cyan-400 text-transparent'>{currentQuiz.level}</span>
                 </h4>
-                <div className='text-right p-7 mt-1 text-white'>
-                  <p className='f-f-vazir-regular' style={{ lineHeight: "40px" }}>
+                <div className='text-right p-2 sm:p-7 mt-1 text-white'>
+                  <p className='f-f-vazir-regular text-[16px]' style={{ lineHeight: "40px" }}>
                     شما این فصل از چالش را با موفقیت به اتمام رساندید و هم اکنون امتیاز را دریافت کردید . شما میتوانید به چالش های دیگر بپیوندید و امتیاز های دیگر دریافت کنید . توجه کنید درصورت شروع مجدد این چالش باید در بخش تنظیمات امتیاز های خود را ریست کنید . شما هم اکنون میتوانید به قسمت لیدربورد بروید و امتیاز خود را چک نمایید <br />
                   </p>
                 </div>
@@ -325,24 +326,27 @@ function Match() {
           </>
           :
 
-          <div className='text-white  gap-10 text-center  grid grid-cols-12 mt-10'>
-            {categories.map(cat => (
-              <div key={cat.key} className='w-120 h-50 group  overflow-hidden col-span-4 mx-auto rounded-lg cursor-pointer flex flex-col items-center justify-center' onClick={() => handleChoise(cat.key)}>
-                <div className='h-full w-full relative rounded-tl-lg rounded-tr-lg' style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0) 1%, rgba(0,0,0,0.8) 100%), url(${cat.image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
-                  <div className='flex flex-col absolute bottom-4 left-4 '>
-                    <span className='f-f-vazir-bold text-[25px] text-white'>
-                      {cat.label}
-                    </span>
-                    <span className='f-f-vazir-bold text-[16px] text-gray-300 transform translate-x-[-200px] group-hover:translate-x-[0] duration-300' >
-                      12 سوال
-                    </span>
+          <Container>
+
+            <div className='text-white out-match  text-center  grid grid-cols-12 mt-10'>
+              {categories.map(cat => (
+                <div key={cat.key} className='match-card  h-50 group  overflow-hidden col-span-12 sm:col-span-6 lg:col-span-4 mx-auto rounded-lg cursor-pointer flex flex-col items-center justify-center' onClick={() => handleChoise(cat.key)}>
+                  <div className='h-full w-full relative rounded-tl-lg rounded-tr-lg' style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0) 1%, rgba(0,0,0,0.8) 100%), url(${cat.image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
+                    <div className='flex flex-col absolute bottom-4 left-4 '>
+                      <span className='f-f-vazir-bold text-[25px] text-white'>
+                        {cat.label}
+                      </span>
+                      <span className='f-f-vazir-bold text-[16px] text-gray-300 transform translate-x-[-200px] group-hover:translate-x-[0] duration-300' >
+                        12 سوال
+                      </span>
+                    </div>
                   </div>
+
+
                 </div>
-
-
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Container>
 
       }
 

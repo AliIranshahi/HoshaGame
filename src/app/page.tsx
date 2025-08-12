@@ -18,7 +18,7 @@ export default async function Home() {
         </section>
 
       </main>
-      <footer className="w-[100%]"><Footer/></footer>
+      <footer className="w-[100%]"><Footer /></footer>
       <div className="bubble-container">
         <span className="bubble"></span>
         <span className="bubble"></span>
@@ -27,7 +27,7 @@ export default async function Home() {
         <span className="bubble"></span>
       </div>
 
-   
+
 
     </>
   );

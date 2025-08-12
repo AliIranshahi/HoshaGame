@@ -10,9 +10,9 @@ import Head from "next/head";
 
 
 export const metadata: Metadata = {
-  title:{
-    default:"هوشا",
-    template:"هوشا | %s"
+  title: {
+    default: "هوشا",
+    template: "هوشا | %s"
   },
   description: "Hosha Game For Who Love Challenge",
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
         <ReduxProvider>
           <Header />
         </ReduxProvider>
-
+     
 
 
         {/*--- */}
